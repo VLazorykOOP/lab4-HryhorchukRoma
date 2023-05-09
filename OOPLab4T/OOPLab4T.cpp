@@ -3,7 +3,7 @@
 // Він містинь функцію "main" з якої починається та закінчується виконання програми.
 //
 
-
+#pragma once
 #include <iostream>
 
 // Ваші файли загловки 
@@ -19,6 +19,4 @@ int main()
     int chain = 1;
     if (chain == 1) chain = mainExample1();
     if (chain == 2) chain = mainExample2();
-    if (chain == 3) chain = mainExample3();
-
 }
