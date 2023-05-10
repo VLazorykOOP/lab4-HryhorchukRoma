@@ -31,7 +31,11 @@ public:
         }
     }
 
-    friend istream& operator>>(istream& in, CountyList& cl) {
+    friend istream& operator>>(istream& in, CountyList& cl); 
+     friend ostream& operator<<(ostream& out, CountyList& cl) ;
+   
+};
+ istream& operator>>(istream& in, CountyList& cl) {
         string name, capital;
         cout << "Enter country: ";
         in >> name;
@@ -40,11 +44,10 @@ public:
         cl(name, capital);
         return in;
     };
-    friend ostream& operator<<(ostream& out, CountyList& cl) {
+  ostream& operator<<(ostream& out, CountyList& cl) {
         out << "Contacts:\n";
         for (const auto& country : cl.countries) {
             out << country.first << ": " << country.second << endl;
         }
         return out;
     }
-};
